@@ -3,7 +3,7 @@ import axios from 'axios';
 export const userDataContext = createContext()
 const UserContext = ({ children }) => {
     // console.log("UserContext mounted or re-rendered");
-    const serverUrl = "http://localhost:5000"
+    const serverUrl = "https://virtualassistant-k3gj.onrender.com"
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [frontEndImage, setFrontEndImage] = useState(null);
