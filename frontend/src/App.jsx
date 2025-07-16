@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import SignUp from './Pages/SignUp'
 import SignIn from './Pages/SignIn'
@@ -11,15 +11,14 @@ import Customize2 from './Pages/Customize2'
 
 const App = () => {
   const { currentUser, setCurrentUser, loading, setLoading } = useContext(userDataContext);
-  function App() {
-  useEffect(() => {
+ useEffect(() => {
     const interval = setInterval(() => {
-      fetch("https://virtualassistant-k3gj.onrender.com/ping") // replace with your backend URL and a safe route
+      fetch("https://virtualassistant-k3gj.onrender.com/ping")
         .then((res) => console.log("Pinged backend:", res.status))
         .catch((err) => console.error("Ping failed:", err));
     }, 10 * 60 * 1000); // every 10 minutes
 
-    return () => clearInterval(interval); // cleanup on unmount
+    return () => clearInterval(interval); // cleanup
   }, []);
   return loading ? (
     <>
