@@ -20,9 +20,9 @@ app.use(cookieParser())
 
 app.use('/api/auth',authRouter);
 app.use('/api/user',userRouter);
-// app.get("/ping", (req, res) => {
-//   res.status(200).send("Server is alive!");
-// });
+app.get("/ping", (req, res) => {
+  res.status(200).send("Server is alive!");
+});
 
 
 app.listen(PORT, () => {
