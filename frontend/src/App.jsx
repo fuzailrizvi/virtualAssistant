@@ -11,6 +11,16 @@ import Customize2 from './Pages/Customize2'
 
 const App = () => {
   const { currentUser, setCurrentUser, loading, setLoading } = useContext(userDataContext);
+  function App() {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch("https://virtualassistant-k3gj.onrender.com/ping") // replace with your backend URL and a safe route
+        .then((res) => console.log("Pinged backend:", res.status))
+        .catch((err) => console.error("Ping failed:", err));
+    }, 10 * 60 * 1000); // every 10 minutes
+
+    return () => clearInterval(interval); // cleanup on unmount
+  }, []);
   return loading ? (
     <>
       <LoadingSpinner />
