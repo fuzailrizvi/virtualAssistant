@@ -40,7 +40,7 @@ const Customize2 = () => {
         onClick={()=>{navigate('/customize')}}
         />
             <h1 className='text-white text-[30px] text-center mb-[30px]'>Enter Your <span className='text-blue-200'>Assistant Name</span></h1>
-            <input type="text" placeholder='Example: Fuzail' className='w-full max-w-[600px] h-[60px] bg-transparent border-b-2 border-blue-400 outline-none text-white placeholder:text-white px-[20px] py-[10px] rounded-b' value={assistantName} onChange={(e) => { setAssistantName(e.target.value) }} />
+            <input type="text" placeholder='Example: John' className='w-full max-w-[600px] h-[60px] bg-transparent border-b-2 border-blue-400 outline-none text-white placeholder:text-white px-[20px] py-[10px] rounded-b' value={assistantName} onChange={(e) => { setAssistantName(e.target.value) }} />
             {assistantName && <button className='mt-[30px] min-w-[300px] h-[60px] text-black font-semibold bg-white rounded-full text-[19px] cursor-pointer'
                 disabled={loading}
                 onClick={() => {
